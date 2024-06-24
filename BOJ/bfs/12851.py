@@ -30,9 +30,17 @@ while queue:
         continue
 
     for i in [a+1, a-1, a*2]:
-        if 0 <= i < 100001 and (ways[i] == 0 or ways[i] == ways[a]+1):
+        if 0 <= i < 100001 and (ways[i] == 0 or ways[i] == ways[a]+1):  # 범위 안에 있고 and (처음 방문 or 방문 했어도 이전 지점에서 재방문 할 수 있을 경우)
             ways[i] = ways[a] + 1
             queue.append(i)
 
 print(result)
 print(cnt)
+
+'''
+예를 들어, 위치 5에서 6으로 이동하면 ways[6] = ways[5] + 1 = 1 + 1 = 2가 됩니다.
+이미 ways[6]이 2로 설정되어 있는 경우, 이는 이 위치에 도달하는 또 다른 경로가 존재한다는 것을 의미합니다.
+이 조건을 통해 BFS 탐색 과정에서 여러 경로를 통해 같은 시간에 도달할 수 있는 모든 경우를 고려하게 됩니다.
+
+이 조건을 제거하면, 이미 방문한 위치를 다시 방문하지 않게 되어 경로의 다양성을 잃게 됩니다.
+'''
