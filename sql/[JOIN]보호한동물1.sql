@@ -1,0 +1,13 @@
+-- 이름, 보호시작일
+-- order by 보호시작일
+
+-- (INNER) JOIN: 서로 매칭하는 row만 return
+-- LEFT JOIN: 매칭하는 row + 매칭 안 하는 value는 null
+
+SELECT AIN.NAME, AIN.DATETIME
+FROM ANIMAL_INS AIN
+LEFT JOIN ANIMAL_OUTS AOUT
+ON AIN.ANIMAL_ID = AOUT.ANIMAL_ID
+WHERE AOUT.DATETIME IS NULL
+ORDER BY AIN.DATETIME
+LIMIT 3
