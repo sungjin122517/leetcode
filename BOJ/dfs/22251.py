@@ -29,14 +29,14 @@ for i in range(10):
             arr[i].append(0)
         else:
             temp = 0
-            for n in range(7):
-                if num[i][n] != num[j][n]:
+            for a in range(7):
+                if num[i][a] != num[j][a]:
                     temp += 1
             arr[i].append(temp)
 
 def dfs(depth, cnt, cx):
-    if depth >= len(cx):
-        if int(cx) == x: # 현재 층수와 결과가 같으면 안 됨?
+    if depth >= len(cx): # 끝까지 다 확인했으면 종료
+        if int(cx) == x: # 현재 층수와 결과가 같으면 안 됨
             return 0
         elif 1 <= int(cx) <= n: # 조건에 맞는 경우
             return 1
