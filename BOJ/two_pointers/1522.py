@@ -11,7 +11,8 @@
 abababababababa
 1. (abababab)abababa -> 괄호 안에 b 4개 밖에랑 교환
 2. a(babababa)bababa -> 괄호 안에 b 4개 밖에랑 교환
-3. abababa)bababab(a -> 괄호 안에 b 3개
+...
+15. abababa)bababab(a -> 괄호 안에 b 3개
 '''
 
 import sys
@@ -41,4 +42,3 @@ while start < len(text):
     minCnt = min(minCnt, bCnt)
 
 print(minCnt)
-
